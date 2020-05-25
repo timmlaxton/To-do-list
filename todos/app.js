@@ -42,9 +42,14 @@ if(e.target.classList.contains('delete')){
 });
 
 const filterTodos  = (term) => {
+
 Array.from(list.children)
 .filter((todo) => !todo.textContent.includes(term))
 .forEach((todo) => todo.classList.add('filtered'))
+
+Array.from(list.children)
+.filter((todo) => todo.textContent.includes(term))
+.forEach((todo) => todo.classList.remove('filtered'))
     
 };
 
